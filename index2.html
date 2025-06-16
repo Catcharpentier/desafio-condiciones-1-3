@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Flowers</title>
+    <style>
+        .contenedor {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .item {
+            text-align: center;
+        }
+
+        .item img {
+            width: 100px;
+            height: 100px;
+        }
+
+        .cantidad-input {
+            margin-top: 10px;
+            width: 100px;
+            padding: 5px;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        #resultado {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        #verificarBtn {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+        <div class="item">
+            <img class="img" src="assets/images/flower2.jpg" alt="Flores 1">
+            <br>
+            <input type="number" min="0" placeholder="Cantidad" class="cantidad-input">
+        </div>
+        <div class="item">
+            <img class="img" src="assets/images/flower3.avif" alt="Flores 2">
+            <br>
+            <input type="number" min="0" placeholder="Cantidad" class="cantidad-input">
+        </div>
+        <div class="item">
+            <img class="img" src="assets/images/flower4.jpg" alt="Flores 3">
+            <br>
+            <input type="number" min="0" placeholder="Cantidad" class="cantidad-input">
+        </div>
+    </div>
+
+    <button id="verificarBtn" onclick="verificarStickers()">Verificar</button>
+    <p id="resultado"></p>
+
+    <script>
+        function verificarStickers() {
+            const inputs = document.querySelectorAll('.cantidad-input');
+            let total = 0;
+
+            inputs.forEach(input => {
+                const cantidad = parseInt(input.value) || 0;
+                total += cantidad;
+            });
+
+            const resultado = document.getElementById('resultado');
+            
+            if (total <= 10) {
+                resultado.textContent = `Llevas ${total} stickers`;
+                resultado.style.color = 'green';
+            } else {
+                resultado.textContent = 'Llevas demasiados stickers';
+                resultado.style.color = 'red';
+            }
+        }
+    </script>
+
+</body>
+</html>

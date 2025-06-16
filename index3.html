@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Selects con Números</title>
+    <style>
+        body {
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: sans-serif;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Ingresa tu password</h2>
+        <div class="select-group">
+            <select id="select1" name="select1">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+            </select>
+
+            <select id="select2" name="select2">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+            </select>
+
+            <select id="select3" name="select3">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+            </select>
+        </div>
+        <button>ingresar</button>
+
+    </div>
+    <script>
+        document.querySelector("button").addEventListener("click", function () {
+
+            const val1 = document.getElementById("select1").value;
+            const val2 = document.getElementById("select2").value;
+            const val3 = document.getElementById("select3").value;
+
+            const password = val1 + val2 + val3;
+
+            let mensaje = document.getElementById("mensaje");
+            if (!mensaje) {
+                mensaje = document.createElement("p");
+                mensaje.id = "mensaje";
+
+                document.querySelector(".container").appendChild(mensaje);
+            }
+
+            if (password === "911") {
+                mensaje.textContent = "password 1 correcto";
+            } else if (password === "714") {
+                mensaje.textContent = "password 2 correcto";
+            } else {
+                mensaje.textContent = "password incorrecto";
+            }
+        });
+
+    </script>
+</body>
+
+</html>

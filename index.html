@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flower Power</title>
+    <link rel="stylesheet" href="assets/css/stylesheet.css">
+</head>
+
+<body>
+    <div style="text-align: center;">
+        <img id="image" src="assets/images/flores.webp" alt="flowers" onclick="cambiar()">
+    </div>
+    <script>
+
+        function cambiar() {
+            const imagen = document.getElementById('image');
+
+            if (imagen.style.border) {
+                imagen.style.border = '';
+            } else {
+                imagen.style.border = '2px solid red';
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>
